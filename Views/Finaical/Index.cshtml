@@ -1,0 +1,107 @@
+﻿@model IEnumerable<RenadWebApp.Models.DataModel.FinaicalModels.FinaicalRequest>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2  dir="rtl" style="margin-bottom:30px">المطالبات</h2>
+
+
+
+<form asp-action="Index" dir="rtl" style="margin-bottom:10px;">
+
+    @Html.TextBox("search", "", htmlAttributes: new { @class = "form-control", placeholder = "البحث برقم العقد ...." })<input style="margin-top:10px ; background-color:#333 ; " type="submit" value="Search" class="btn btn-success" placeholder="" />
+
+</form>
+
+
+<style>
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+ 
+
+    table, th, td {
+        border: 1px solid black;
+        text-align: center
+    }
+</style>
+
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="card " dir="rtl">
+        <div class="card-header" style="background-color: #333; color:#fff">
+
+            <h6>رقم العقد  :  @item.ContractNumber </h6>
+
+
+        </div>
+        <div class="card-body table-responsive">
+
+            <table class="table" dir="rtl">
+                <tbody>
+                <thead>
+                    <tr>
+                        <th>
+                            <h6>رقم المطالبة</h6>
+                                @* @Html.DisplayNameFor(model => model.FinaicalNumber) *@
+                        </th>
+                     
+                        <th>
+                            <h6>اسم العميل</h6>
+                               @*  @Html.DisplayNameFor(model => model.ClientName) *@
+                        </th>
+                        <th>
+                            <h6>عنوان المطالبة</h6>
+                              @*   @Html.DisplayNameFor(model => model.Titel) *@
+                        </th>
+                        <th>
+                            <h6>التفاصيل</h6>
+                               @*  @Html.DisplayNameFor(model => model.Description) *@
+                        </th>
+                        <th>
+                            <h6>تاريخ المطالبة</h6>
+                              @*   @Html.DisplayNameFor(model => model.CreatedDate) *@
+                        </th>
+
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.FinaicalNumber)
+                    </td>
+                    
+                    <td>
+                            @Html.DisplayFor(modelItem => item.ClientName)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Titel)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+}

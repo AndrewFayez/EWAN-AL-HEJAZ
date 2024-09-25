@@ -1,0 +1,172 @@
+﻿@model RenadWebApp.Models.DataModel.ClientModels
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<style>
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+
+    .control-label{
+        font-weight: bold;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+        width: 540px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .btn-primary {
+        border-color: #ed8b09
+    }
+
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+        text-align:center;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, td {
+        margin: 5px;
+        padding: 4px;
+    }
+</style>
+
+
+<div class="card" dir="rtl">
+    <table>
+        <tr style="text-align:center ; background-color:#333;color:#fff">
+            <td>
+                <h4 style="align-self:center">تعديل الدفعات</h4>
+            </td>
+        </tr>
+     
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label" style="margin-bottom:7px">اسم العميل</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                </td>
+            </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label" style="margin-bottom:7px">رقم التليفون</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label" style="margin-bottom:7px">الإيميل</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="NumberOfProject" class="control-label" style="margin-bottom:7px">رقم المشروع</label>
+                    <input asp-for="NumberOfProject" class="form-control" />
+                    <span asp-validation-for="NumberOfProject" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label" style="margin-bottom:7px">تاريخ الاضافة</label>
+                    <input asp-for="CreatedDate" class="form-control" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Approved" class="control-label" style="margin-bottom:7px"> الموافقة</label>
+                    <input asp-for="Approved" class="form-control" />
+                    <span asp-validation-for="Approved" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr style="text-align:center">
+            <td>
+                <div class="form-group">
+                    <input type="submit" class="abut" value="Save"  />
+                </div>
+
+            </td>
+        </tr>
+
+
+
+     
+
+
+        </form>
+     
+   </table> 
+</div>
+<div>
+    <a asp-action="Index" class="abut">الصفحة الرئيسية</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

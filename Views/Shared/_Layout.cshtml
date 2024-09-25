@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EWAN AL-HEJAZ</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RenadWebApp.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <style>
+        .navbar {
+            background : #333;
+            padding:0 ;
+            margin : 0
+
+        }
+
+        ul li {
+                padding :15px;
+        
+        }
+        ul li:hover {
+            background: #ed8b09;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  border-bottom box-shadow mb-3">
+            <div class="container-fluid p-0" dir="rtl">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+                    <ul class="navbar-nav flex-grow-1 p-0 m-0">
+
+                          <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="Login" style="font-weight: bold"><img src="~/logout.png" alt="Logout" /></a>
+                        </li>
+                       
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight: bold;">المشاريع</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Eng" asp-action="Index" style="font-weight: bold;">المهندسين</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Finaical" asp-action="Index" style="font-weight: bold;">المطالبات</a>
+                        </li>
+
+                      
+                    </ul>
+                </div>
+                <a class="navbar-brand m-0" asp-area="" asp-controller="Home" asp-action="Index" style="background:#ed8b09;padding:20px 30px; font-weight:bold">EWAN AL-HEJAZ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div style="align-self:center ; margin:50px ">
+        <main role="main" class="pb-3"  >
+
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - EWAN AL-HEJAZ - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

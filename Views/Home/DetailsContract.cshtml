@@ -1,0 +1,296 @@
+﻿@model RenadWebApp.Models.DataModel.ContractModel
+
+@{
+    ViewData["Title"] = "DetailsContract";
+}
+
+
+<style>
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+        width: 750px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .btn-primary {
+        border-color: #ed8b09
+    }
+
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #333;
+        background: #333;
+        width: 120px;
+        text-align: center;
+    }
+
+        .abut:hover {
+            color: #333;
+            background: transparent;
+            border-block-color: #333;
+        }
+        h6{
+            font-weight:bold;
+            font-size:25px
+        }
+
+     th {
+        margin: 7px;
+        padding: 8px;
+        border: 3px solid black;
+        text-align: center;
+        width:750px;
+       
+    }
+</style>
+
+
+<div class="card" dir="rtl" style="margin-bottom:20px;">
+    <table>
+
+        <h2 style="text-align:center ; background-color:#333; color:#fff ; padding:10px">تفاصيل العرض</h2>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>اسم المشروع</h6>
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.ProjectName)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>   الموافقة  </h6>
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.Approved)
+                </h6>
+            </th>
+        </tr>
+
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>رقم العرض</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.ContractNumber)
+                </h6>
+            </th>
+        </tr>
+
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>مده التسليم</h6>
+            </th>
+            <th>
+            <h6>
+                @Html.DisplayFor(model => model.Duration)
+            </h6>
+
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>تاريخ العرض</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.CreatedDate)
+                </h6>
+            </th>
+        </tr>
+
+
+       
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>تاريخ التسليم</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.DeliveryDate)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6> المشروع من طرف</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.ProjectBy)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>نسبه المهندس</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.RatioForEng)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>إجمالي المبلغ للمهندس</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.TotalRatioForEng)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>  الباقي من مبلغ المهندس</h6>
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.RestOfEngShow)
+                </h6>
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>قيمه الضريبه</h6>
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.TotalTax)
+                </h6>
+
+            </th>
+        </tr>
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6>  الباقي من مبلغ الضريبة</h6>
+
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.RestOfTAxShow)
+                </h6>
+
+            </th>
+        </tr>
+
+
+        <tr style="background-color:#eee">
+            <th>
+                <h6> إجمالي المبلغ قبل الضريبه</h6>
+            </th>
+            <th>
+                <h6>
+                @Html.DisplayFor(model => model.TotalAmount)
+                </h6>
+            </th>
+        </tr>
+
+       
+
+        <tr style="background-color:#31e916">
+            <th>
+                <h6>إجمالي مبلغ العرض</h6>
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.TotalOfContract)
+                </h6>
+            </th>
+        </tr>
+      
+
+        <tr style="background-color:#4db847">
+            <th>
+                <h6>إجمالي المبلغ المدفوع</h6>
+            </th>
+            <th>
+                <h6>
+        @(Model.TotalOfContract - Model.RestOfContractShow)
+                </h6>
+            </th>
+        </tr>
+
+
+        <tr style="background-color:green">
+            <th>
+                <h6>  الباقي من إجمالي العقد</h6>
+
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.RestOfContractShow)
+                </h6>
+            </th>
+        </tr>
+        
+
+
+      @*   <tr style="background-color:#f4400b">
+            <th>
+                <h6>   المبالغ المتاخرة  </h6>
+
+            </th>
+            <th>
+                <h6>
+            @Html.DisplayFor(model => model.AmountLate)
+                </h6>
+            </th>
+        </tr> *@
+
+
+       
+    </table>
+</div>
+
+
+<div style="text-align:center">
+  
+    <a asp-action="Create" asp-controller="Payment" class="abut" class="btn btn-primary" asp-route-id="@Model?.Id">الدفع</a>
+    <a asp-action="Create" asp-controller="Finaical" class="abut" class="btn btn-primary" asp-route-id="@Model?.Id">إضافه مطالبة</a>
+
+
+
+    <a asp-action="Index" class="abut" class="btn btn-primary">الصفحة الرئيسية</a>
+
+</div>
+

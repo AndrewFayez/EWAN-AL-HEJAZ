@@ -1,0 +1,210 @@
+﻿@model RenadWebApp.Models.DataModel.EngModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<style>
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+        width: 540px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .btn-primary {
+        border-color: #ed8b09
+    }
+
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+        text-align:center;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, td {
+        margin: 5px;
+        padding: 4px;
+    }
+</style>
+
+
+<div class="card" dir="rtl">
+    <table>
+        <tr style="text-align:center ; background-color:#333;color:#fff">
+            <td>
+                <h4 style="align-self:center">تعديل المهندسين</h4>
+            </td>
+        </tr>
+       
+       
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <tr>
+                <td>    
+                <div class="form-group">
+                    <label asp-for="EngName" class="control-label" style="margin-bottom:7px"> اسم المهندس</label>
+                    <input asp-for="EngName" class="form-control" />
+                    <span asp-validation-for="EngName" class="text-danger"></span>
+                </div>
+
+                </td>
+            </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label" style="margin-bottom:7px">رقم التليفون</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label" style="margin-bottom:7px">الإيميل</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Offices" class="control-label" style="margin-bottom:7px">المكتب</label>
+                    <input asp-for="Offices" class="form-control" />
+                    <span asp-validation-for="Offices" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+@* 
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Connection" class="control-label" style="margin-bottom:7px">التواصل</label>
+                    <input asp-for="Connection" class="form-control" />
+                    <span asp-validation-for="Connection" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="CompOrFree" class="control-label" style="margin-bottom:7px">الشركة او المكتب</label>
+                    <input asp-for="CompOrFree" class="form-control" />
+                    <span asp-validation-for="CompOrFree" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Meeting" class="control-label" style="margin-bottom:7px">الإجتماع</label>
+                    <input asp-for="Meeting" class="form-control" />
+                    <span asp-validation-for="Meeting" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="Created" class="control-label" style="margin-bottom:7px">تاريخ الانشاء</label>
+                    <input asp-for="Created" class="form-control" />
+                    <span asp-validation-for="Created" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="TimeOfMeeting" class="control-label" style="margin-bottom:7px">تاريخ الإجتماع</label>
+                    <input asp-for="TimeOfMeeting" class="form-control" />
+                    <span asp-validation-for="TimeOfMeeting" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label asp-for="LastCommunication" class="control-label" style="margin-bottom:7px">اخر تواصل</label>
+                    <input asp-for="LastCommunication" class="form-control" />
+                    <span asp-validation-for="LastCommunication" class="text-danger"></span>
+                </div>
+
+            </td>
+        </tr>
+ *@       
+ 
+ 
+ <tr style="text-align:center">
+            <td>
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="abut" />
+                </div>
+
+            </td>
+        </tr>
+
+
+        </form>
+   
+   </table>
+</div>
+
+<div>
+    <a asp-action="Index" class="abut">الصفحة الرئيسية</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

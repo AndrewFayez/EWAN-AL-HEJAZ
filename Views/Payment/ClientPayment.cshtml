@@ -1,0 +1,150 @@
+﻿@model IEnumerable<RenadWebApp.Models.DataModel.PayContractModel>
+
+@{
+    ViewData["Title"] = "ClientPayment";
+}
+
+<h2 dir="rtl" style="margin-bottom:30px"> دفعات العميل</h2>
+
+
+
+<style>
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, th, td {
+        border: 1px solid black;
+        text-align: center
+    }
+</style>
+
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="card " dir="rtl">
+        <div class="card-header" style="background-color: #333; color:#fff">
+            <h5>  @Html.DisplayFor(modelItem => item.PaymentNumber)</h5>
+            <h5>  @Html.DisplayFor(modelItem => item.ContractPay)</h5>
+
+        </div>
+        <div class="card-body table-responsive">
+
+            <table class="table" dir="rtl">
+
+                <thead>
+                    <tr>
+
+                        <th>
+                            <h6>المدفوع</h6>
+                            @*  @Html.DisplayNameFor(model => model.Payments) *@
+                        </th>
+                        <th>
+                            <h6> تاريخ الدفع</h6>
+                            @*  @Html.DisplayNameFor(model => model.DateForPayment) *@
+                        </th>
+                        <th>
+                            <h6> تاريخ الإستحقاق</h6>
+                            @*  @Html.DisplayNameFor(model => model.DueDate) *@
+                        </th>
+                        <th>
+                            <h6>مدة التاخير</h6>
+                            @*  @Html.DisplayNameFor(model => model.LateTime1) *@
+                        </th>
+                        <th>
+                            <h6>نسبة المهندس</h6>
+                            @*  @Html.DisplayNameFor(model => model.RatioForEng) *@
+                        </th>
+                        <th>
+                            <h6>إستحقاق المهندس</h6>
+                            @*   @Html.DisplayNameFor(model => model.DueEngRatio) *@
+                        </th>
+                        <th>
+                            <h6>ضريبة الدفعة</h6>
+                            @*   @Html.DisplayNameFor(model => model.PaymentTax) *@
+                        </th>
+                        <th>
+                            <h6>إستحقاق الضريبة</h6>
+                            @*  @Html.DisplayNameFor(model => model.DueTax) *@
+                        </th>
+                        <th>
+                            <h6>قيمة الدفعة</h6>
+                            @*   @Html.DisplayNameFor(model => model.PayMentValue) *@
+                        </th>
+                        <th>
+                            <h6>الدفعة فرق المدفوع</h6>
+                            @*    @Html.DisplayNameFor(model => model.Difference) *@
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Payments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateForPayment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DueDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LateTime1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RatioForEng)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DueEngRatio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaymentTax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DueTax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PayMentValue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Difference)
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+<a class="abut text-center" asp-action="Index" asp-controller="Home" > الصفحة الرئيسية </a>

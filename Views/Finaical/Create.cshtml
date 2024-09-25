@@ -1,0 +1,145 @@
+﻿@model RenadWebApp.Models.DataModel.FinaicalModels.FinaicalRequest
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<style>
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+        width: 540px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .btn-primary {
+        border-color: #ed8b09
+    }
+
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+        text-align: center;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, td {
+        margin: 5px;
+        padding: 4px;
+    }
+</style>
+
+
+<div class="card" dir="rtl">
+    <table>
+        <tr style="text-align:center ; background-color:#333;color:#fff">
+            <td>
+                <h4 style="align-self:center">إضافة مطالبة</h4>
+            </td>
+        </tr>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+            <tr>
+                <td>
+            <div class="form-group">
+                <label asp-for="FinaicalNumber" class="control-label">رقم المطالبة</label>
+                <input asp-for="FinaicalNumber" class="form-control" />
+                <span asp-validation-for="FinaicalNumber" class="text-danger"></span>
+            </div>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label asp-for="ClientName" class="control-label">إسم العميل</label>
+                    <input asp-for="ClientName" class="form-control" />
+                    <span asp-validation-for="ClientName" class="text-danger"></span>
+                </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label asp-for="Titel" class="control-label">عنوان المطالبة</label>
+                    <input asp-for="Titel" class="form-control" />
+                    <span asp-validation-for="Titel" class="text-danger"></span>
+                </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">تفاصيل المطالية</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                <div class="form-group">
+                    <label asp-for="CreatedDate" class="control-label">تاريخ الإنشاء</label>
+                    <input asp-for="CreatedDate" class="form-control" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+                </td>
+            </tr>
+
+            <tr style="text-align:center">
+                <td>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="abut" />
+                    </div>
+
+                </td>
+            </tr>
+
+
+        </form>
+        </table>
+    </div>
+
+<div>
+    <a asp-action="Index" class="abut">الصفحة الرئيسية</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

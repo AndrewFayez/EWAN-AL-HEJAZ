@@ -1,0 +1,117 @@
+﻿@model RenadWebApp.Models.DataModel.LoginModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<style>
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: none;
+    }
+
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+        width: 540px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .btn-primary {
+        border-color: #ed8b09
+    }
+
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+        text-align: center;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, td {
+        margin: 5px;
+        padding: 4px;
+    }
+</style>
+
+
+<div class="card" dir="rtl">
+    <table>
+        <tr style="text-align:center ; background-color:#333;color:#fff">
+            <td>
+                <h4 style="align-self:center">تعديل المستخدم</h4>
+            </td>
+        </tr>
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="userId" />
+
+            <tr>
+                <td>
+
+            <div class="form-group">
+                <label asp-for="username" class="control-label"></label>
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+
+                </td>
+            </tr>
+
+
+        <tr style="text-align:center">
+            <td>
+            <div class="form-group">
+                    <input type="submit" class="abut" value="Save" class="btn btn-primary" />
+            </div>
+            </td>
+        </tr>
+        </form>
+    </table>
+
+    </div>
+
+<div>
+    <a asp-action="Index" asp-controller="Login" class="abut">كل المستخدمين</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,89 @@
+﻿
+<h2 dir="rtl" style="margin-bottom:30px">كشف عقود المهندس</h2>
+
+
+
+<style>
+    .card {
+        margin-bottom: 15px;
+        transition: 0.3s linear;
+    }
+
+        .card:hover {
+            box-shadow: 3px 5px 15px #333;
+        }
+
+    .abut {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        padding: 5px;
+        border: 1px solid #ed8b09;
+        background: #ed8b09;
+        width: 120px;
+        text-align:center;
+    }
+
+        .abut:hover {
+            color: #ed8b09;
+            background: transparent;
+            border-block-color: #ed8b09;
+        }
+
+    table, th, td {
+        border: 1px solid black;
+        text-align: center
+    }
+</style>
+
+        @foreach (var item in Model)
+        {
+
+              <div class="card " dir="rtl">
+        <div class="card-header" style="background-color: #333; color:#fff">
+
+            <h5>رقم العقد  :  @item.ContractNumber  </h5>
+
+
+        </div>
+        <div class="card-body table-responsive">
+
+            <table class="table" dir="rtl">
+                        <tbody>
+                        <thead>
+                            <tr>
+                                <th>اسم المهندس</th>
+                                <th>اسم المشروع</th>
+                                <th>إجمالي العقد</th>
+                                <th>باقي المبلغ للعقد</th>
+                                <th>إجمالي المبلغ قبل الضريبه</th>
+                                <th>نسبه المهندس</th>
+
+                                <th>إجمالي المبلغ للمهندس</th>
+                                <th>باقي المبلغ للمهندس</th>
+
+                            </tr>
+                        </thead>
+                             <tr>
+                 <td>@item.EngName</td>
+                <td>@item.ProjectName</td>
+                <td>@item.TotalOfContract</td>
+                <td>@item.RestOfContractShow</td>
+                <td>@item.TotalAmount</td>
+                <td>@item.RatioForEng</td>
+
+                <td>@item.TotalRatioForEng</td>
+                <td>@item.RestOfEngShow</td>
+               
+            </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+}
+<div>
+    <a asp-action="Index" class="abut">الصفحة الرئيسية</a>
+</div>
